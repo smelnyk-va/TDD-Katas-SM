@@ -1,5 +1,5 @@
 ﻿import unittest
-from Src.TheCalcStatsKata.CalcStat import process_minimum_value, \
+from CalcStat import process_minimum_value, \
     process_maximum_value, determine_number_of_elements_in_the_sequence, \
     determine_average_value_from_list, calc_stats
 
