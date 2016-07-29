@@ -2,16 +2,43 @@
 
 http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
 
-- Create a new project or start in the existing project by adding Game.cs and TestGame.cs
-- Create two public methods methods [refer to the presentation file]
-- Create Test Methods for the above Methods
-- This is called a 'RED' Test as it is going to fail.
-- Rectified both test and class methods
-- Write new test
-- This is called a 'Green' Test as it is going to pass.
-- Rectified TestMethods to meet total 20 frames hit.
-- Rectified test to accept multiple frame and pins
-- Test 3 is a 'Red' test
-- Test 4 and 5 are 'Green'
-- All test passed
-- Still there is scope of refactoring
+The game consists of 10 frames as shown above.  In each frame the player has
+two opportunities to knock down 10 pins.  The score for the frame is the total
+number of pins knocked down, plus bonuses for strikes and spares.
+
+A spare is when the player knocks down all 10 pins in two tries.  The bonus for
+that frame is the number of pins knocked down by the next roll.  So in frame 3
+above, the score is 10 (the total number knocked down) plus a bonus of 5 (the
+number of pins knocked down on the next roll.)
+
+A strike is when the player knocks down all 10 pins on his first try.  The bonus
+for that frame is the value of the next two balls rolled.
+
+In the tenth frame a player who rolls a spare or strike is allowed to roll the extra
+balls to complete the frame.  However no more than three balls can be rolled in
+tenth frame.
+
+Write a class named “Game” that has two methods
+roll(pins : int) is called each time the player rolls a ball.  The argument is the number of pins knocked down.
+score() : int is called only at the very end of the game.  It returns the total score for that game.
+
+A game has 10 frames
+
+A frame has 1 or two rolls
+
+The tenth frame has two or three rolls.
+It is different from all the other frames.
+
+The score function must iterate through all the frames, and calculate all their scores.
+
+The score for a spare or a strike depends on the frame’s successor.
+
+===
+
+Create a project named BowlingGame
+Create a unit test named BowlingGameTest
+
+    import junit.framework.TestCase;
+
+    public class BowlingGameTest extends TestCase {
+    }
