@@ -1,8 +1,8 @@
 ﻿import unittest
-from HarryPotter import calculate_cost_of_books_purchased
+from HarryPotter import calculate_cost_of_books_purchased, calculate_cost_of_books_purchased_individual
 
 
-class HarryPotterTests(unittest.TestCase):
+class HarryPotterCalculateCostOfBooksPurchasedTests(unittest.TestCase):
 
     def test_buy_one_copy_of_first_book_should_cost_8_euros(self):
         num_of_books = 1
@@ -53,4 +53,110 @@ class HarryPotterTests(unittest.TestCase):
         different_book_titles = 5
         expected_cost = 30.0  # (8*5) - ((8*5) * 0.25)
         actual = calculate_cost_of_books_purchased(num_of_books, different_book_titles)
+        self.assertEqual(expected_cost, actual)
+
+
+class HarryPotterCalculateCostOfBooksPurchasedIndividualTests(unittest.TestCase):
+
+    def test_buy_one_copy_of_first_book_should_cost_8_euros(self):
+        num_of_books = 1
+        num_of_book_one = 1
+        num_of_book_two = 0
+        num_of_book_three = 0
+        num_of_book_four = 0
+        num_of_book_five = 0
+        expected_cost = 8
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_second_book_should_cost_8_euros(self):
+        num_of_books = 1
+        num_of_book_one = 0
+        num_of_book_two = 1
+        num_of_book_three = 0
+        num_of_book_four = 0
+        num_of_book_five = 0
+        expected_cost = 8
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_third_book_should_cost_8_euros(self):
+        num_of_books = 1
+        num_of_book_one = 0
+        num_of_book_two = 0
+        num_of_book_three = 1
+        num_of_book_four = 0
+        num_of_book_five = 0
+        expected_cost = 8
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_fourth_book_should_cost_8_euros(self):
+        num_of_books = 1
+        num_of_book_one = 0
+        num_of_book_two = 0
+        num_of_book_three = 0
+        num_of_book_four = 1
+        num_of_book_five = 0
+        expected_cost = 8
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_fifth_book_should_cost_8_euros(self):
+        num_of_books = 1
+        num_of_book_one = 0
+        num_of_book_two = 0
+        num_of_book_three = 0
+        num_of_book_four = 0
+        num_of_book_five = 1
+        expected_cost = 8
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_first_and_second_book_should_give_5_percent_discount(self):
+        num_of_books = 2
+        num_of_book_one = 1
+        num_of_book_two = 1
+        num_of_book_three = 0
+        num_of_book_four = 0
+        num_of_book_five = 0
+        discount = 16 * 0.05
+        expected_cost = 16 - discount  # 15.2
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_first_second_and_third_book_should_give_10_percent_discount(self):
+        num_of_books = 3
+        num_of_book_one = 1
+        num_of_book_two = 1
+        num_of_book_three = 1
+        num_of_book_four = 0
+        num_of_book_five = 0
+        discount = 24 * 0.10
+        expected_cost = 24 - discount  # 21.6
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_first_second_third_and_fourth_book_should_give_15_percent_discount(self):
+        num_of_books = 4
+        num_of_book_one = 1
+        num_of_book_two = 1
+        num_of_book_three = 1
+        num_of_book_four = 1
+        num_of_book_five = 0
+        discount = 32 * 0.15
+        expected_cost = 32 - discount  # 21.6
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
+        self.assertEqual(expected_cost, actual)
+
+    def test_buy_one_copy_of_first_second_third_and_fourth_book_should_give_15_percent_discount(self):
+        num_of_books = 5
+        num_of_book_one = 1
+        num_of_book_two = 1
+        num_of_book_three = 1
+        num_of_book_four = 1
+        num_of_book_five = 1
+        discount = 40 * 0.25
+        expected_cost = 40 - discount  # 21.6
+        actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
         self.assertEqual(expected_cost, actual)

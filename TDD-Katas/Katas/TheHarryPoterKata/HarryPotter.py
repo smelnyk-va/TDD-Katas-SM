@@ -36,6 +36,7 @@ Answer: 51.60 EUR
 
 
 def calculate_cost_of_books_purchased(num_of_books, num_of_different_titles):
+    """ My first attempt at this function, made it too generic """
 
     cost_of_one_book = 8
     initial_cost_for_books = num_of_books * cost_of_one_book
@@ -64,3 +65,45 @@ def calculate_cost_of_books_purchased(num_of_books, num_of_different_titles):
         total_cost = initial_cost_for_books * num_of_different_titles
 
     return total_cost
+
+
+def calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five):
+    """ My second attempt at this function - passing in individual books this time """
+
+    cost_of_one_book = 8
+    initial_cost_for_books = num_of_books * cost_of_one_book
+
+    num_of_different_book_titles = 0
+
+    if num_of_book_one >= 1:
+        num_of_different_book_titles += 1
+    if num_of_book_two >= 1:
+        num_of_different_book_titles += 1
+    if num_of_book_three >= 1:
+        num_of_different_book_titles += 1
+    if num_of_book_four >= 1:
+        num_of_different_book_titles += 1
+    if num_of_book_five >= 1:
+        num_of_different_book_titles += 1
+
+    if num_of_different_book_titles == 2:
+        discount = 0.05
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+    elif num_of_different_book_titles == 3:
+        discount = 0.10
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+    elif num_of_different_book_titles == 4:
+        discount = 0.15
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+    elif num_of_different_book_titles == 5:
+        discount = 0.25
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+    else:
+        total_cost = initial_cost_for_books
+
+    return total_cost
+
