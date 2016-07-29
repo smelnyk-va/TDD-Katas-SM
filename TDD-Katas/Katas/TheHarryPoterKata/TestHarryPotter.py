@@ -133,7 +133,7 @@ class HarryPotterCalculateCostOfBooksPurchasedIndividualTests(unittest.TestCase)
         num_of_book_four = 0
         num_of_book_five = 0
         discount = 24 * 0.10
-        expected_cost = 24 - discount  # 21.6
+        expected_cost = 24 - discount
         actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
         self.assertEqual(expected_cost, actual)
 
@@ -145,7 +145,7 @@ class HarryPotterCalculateCostOfBooksPurchasedIndividualTests(unittest.TestCase)
         num_of_book_four = 1
         num_of_book_five = 0
         discount = 32 * 0.15
-        expected_cost = 32 - discount  # 21.6
+        expected_cost = 32 - discount
         actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
         self.assertEqual(expected_cost, actual)
 
@@ -157,6 +157,6 @@ class HarryPotterCalculateCostOfBooksPurchasedIndividualTests(unittest.TestCase)
         num_of_book_four = 1
         num_of_book_five = 1
         discount = 40 * 0.25
-        expected_cost = 40 - discount  # 21.6
+        expected_cost = 40 - discount
         actual = calculate_cost_of_books_purchased_individual(num_of_books, num_of_book_one, num_of_book_two, num_of_book_three, num_of_book_four, num_of_book_five)
         self.assertEqual(expected_cost, actual)
