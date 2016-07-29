@@ -39,16 +39,28 @@ def calculate_cost_of_books_purchased(num_of_books, num_of_different_titles):
 
     cost_of_one_book = 8
     initial_cost_for_books = num_of_books * cost_of_one_book
-    print "Initial Cost is: " + str(initial_cost_for_books)
 
     if num_of_different_titles == 2:
         discount = 0.05
-        discount_cost = (initial_cost_for_books * num_of_different_titles) * discount
-        # print "Discount Cost is: " + str(discount_cost)
+        discount_cost = initial_cost_for_books * discount
         total_cost = initial_cost_for_books - discount_cost
-        # print "Total Cost is: " + str(total_cost)
+
+    elif num_of_different_titles == 3:
+        discount = 0.10
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+
+    elif num_of_different_titles == 4:
+        discount = 0.15
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+
+    elif num_of_different_titles == 5:
+        discount = 0.25
+        discount_cost = initial_cost_for_books * discount
+        total_cost = initial_cost_for_books - discount_cost
+
     else:
         total_cost = initial_cost_for_books * num_of_different_titles
-        # print "Total Cost is: " + str(total_cost)
 
     return total_cost
