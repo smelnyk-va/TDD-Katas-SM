@@ -34,3 +34,21 @@ For example, how much does this basket of books cost?
 Answer: 51.60 EUR
 """
 
+
+def calculate_cost_of_books_purchased(num_of_books, num_of_different_titles):
+
+    cost_of_one_book = 8
+    initial_cost_for_books = num_of_books * cost_of_one_book
+    print "Initial Cost is: " + str(initial_cost_for_books)
+
+    if num_of_different_titles == 2:
+        discount = 0.05
+        discount_cost = (initial_cost_for_books * num_of_different_titles) * discount
+        # print "Discount Cost is: " + str(discount_cost)
+        total_cost = initial_cost_for_books - discount_cost
+        # print "Total Cost is: " + str(total_cost)
+    else:
+        total_cost = initial_cost_for_books * num_of_different_titles
+        # print "Total Cost is: " + str(total_cost)
+
+    return total_cost
