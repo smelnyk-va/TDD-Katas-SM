@@ -1,3 +1,4 @@
+# coding=utf-8
 __author__ = 'smelnyk'
 
 import unittest
@@ -32,6 +33,16 @@ class StringCalculatorAddTests(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_add_should_return_sum_equal_to_the_sum_of_multiple_numbers_separated_by_a_newline_and_a_comma(self):
-        expected = 15
-        actual = StringCalculator.string_add("5\n5,5")
+        expected = 6
+        actual = StringCalculator.string_add("1\n2,3")
         self.assertEqual(expected, actual)
+
+    """ Upcoming Tests/Code that needs to be written/handled """
+    # Calling Add with a negative number will throw an exception "negatives not allowed" - and the negative that
+    # was passed.if there are multiple negatives, show all of them in the exception message
+
+    # Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
+
+    # Delimiters can be of any length with the following format: "//[delimiter]\n" for example: "//[***]\n1***2***3" = 6
+
+    # When done the above, write a substract function and follow the same kind of steps!
