@@ -20,3 +20,18 @@ class StringCalculatorAddTests(unittest.TestCase):
         expected = 5
         actual = StringCalculator.string_add("2, 3")
         self.assertEqual(expected, actual)
+
+    def test_add_should_return_sum_equal_to_the_sum_of_3_numbers_given_separated_by_a_comma(self):
+        expected = 10
+        actual = StringCalculator.string_add("2, 3, 5")
+        self.assertEqual(expected, actual)
+
+    def test_add_should_return_sum_equal_to_the_sum_of_multiple_numbers_separated_by_a_newline(self):
+        expected = 10
+        actual = StringCalculator.string_add("5\n5")
+        self.assertEqual(expected, actual)
+
+    def test_add_should_return_sum_equal_to_the_sum_of_multiple_numbers_separated_by_a_newline_and_a_comma(self):
+        expected = 15
+        actual = StringCalculator.string_add("5\n5,5")
+        self.assertEqual(expected, actual)
