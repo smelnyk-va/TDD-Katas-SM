@@ -15,3 +15,8 @@ class StringCalculatorAddTests(unittest.TestCase):
         expected = 3
         actual = StringCalculator.string_add("3")
         self.assertEqual(expected, actual)
+
+    def test_add_should_return_sum_equal_to_the_sum_of_2_numbers_given_separated_by_a_comma(self):
+        expected = 5
+        actual = StringCalculator.string_add("2, 3")
+        self.assertEqual(expected, actual)
